@@ -1,0 +1,34 @@
+<div class="mt-4">
+  <div class="row">
+    {{#each user}}
+    <div class="col-sm-6 col-lg-4" style="margin: 10px 0px;">
+      <div class="card card-course-item" data-slug="{{this.SLUG}}" data-name="{{this.NAME}}" data-image="{{this.IMAGE}}" data-title="{{this.INTRODUCE}}" style="height: 600px;">
+        <a href="/MeoVat/{{this.SLUG}}">
+          <img class="card-img-top" style="height: 300px;" src="{{this.IMAGE}}" alt="{{this.NAME}}">
+        </a>
+        <div class="card-body">
+          <a href="/MeoVat/{{this.SLUG}}">
+            <h5 class="card-title">{{this.NAME}}</h5>
+          </a>
+          <p class="card-text">{{this.INTRODUCE}}.</p>
+          <div class="blockheart" data-slug="{{this.SLUG}}" data-name="{{this.NAME}}" data-image="{{this.IMAGE}}" data-title="{{this.INTRODUCE}}">
+            <div class="heart"></div>
+            <div class="animation-heart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+<ul class="block-navigate">
+  <li class="item-navigate item-navigate--active">
+    <a href="/MeoVat/navigate/1" class="item-navigate_link">1</a>
+  </li>
+  <li class="item-navigate">
+    <a href="/MeoVat/navigate/2" class="item-navigate_link">2</a>
+  </li>
+</ul>
+{{#if loggedIn}}
+    <script src="/js/favourite-trick.js"></script>
+    {{/if}}

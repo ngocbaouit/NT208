@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/SignUp.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon-16x16.png">
+</head>
+
+<body>
+    <div class="wrapper">
+        <form id="registerForm" method="post">
+            <h1>Register</h1>
+            <div class="inputbox">
+                <input type="text" placeholder="Username" id="Username" name="Username" required>
+                <i class='bx bxs-user'></i>
+                <div id="Username-error-message" style="color: red; display: none;">Tên người dùng đã tồn tại.</div>
+            </div>
+            <div class="inputbox">
+                <input type="password" placeholder="Password" id="Password" name="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+                <div id="password-error-message" style="color: yellow; display: none; ">Password: 8-24 ký tự, gồm chữ
+                    hoa, chữ thường và kí tự.</div>
+            </div>
+            <div class="inputbox">
+                <input type="password" placeholder="Retype Password" id="RetypePassword" name="RetypePassword" required>
+                <i class='bx bxs-lock-alt'></i>
+                <div id="password-match-error" style="color: yellow; display: none;">Password và Confirm Password không
+                    khớp.</div>
+            </div>
+
+            <button class="btn" type="submit">Register</button>
+            <div class="register-link">
+                <p>You already have an account? <a href="/login">Login now</a></p>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Ngăn chặn submit mặc định của form
+            const password = document.getElementById('Password').value;
+            const username = document.getElementById('Username').value;
+            const confirmPassword = document.getElementById('RetypePassword').value;
+
+            // Kiểm tra xem password và confirm password có khớp nhau không
+            if (password !== confirmPassword) {
+                document.getElementById('password-match-error').style.display = 'block';
+                return; // Dừng việc gửi yêu cầu API nếu password và confirm password không khớp
+            } else {
+                document.getElementById('password-match-error').style.display = 'none';
+            }
+
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.,;'@!%*?&])[A-Za-z\d.,;'@!%*?&]{8,24}$/;
+            if (!passwordRegex.test(password)) {
+                document.getElementById('password-error-message').style.display = 'block';
+                return; // Dừng việc gửi yêu cầu API nếu mật khẩu không đáp ứng yêu cầu
+            } else {
+                document.getElementById('password-error-message').style.display = 'none';
+            }
+            try {
+                // Gửi yêu cầu đăng ký tới API /v1/Register
+                const registerResponse = await axios.post('/v1/Register', { Username: username, Password: password, RetypePassword: confirmPassword });
+                // Kiểm tra mã trạng thái của phản hồi từ API
+                if (registerResponse.status === 200) {
+                    window.location.href = '/';
+                }
+            } catch (error) {
+                // Xử lý lỗi nếu có
+                document.getElementById('Username-error-message').style.display = 'block';
+                console.error('Đăng ký không thành công: ' + error);
+            }
+        });
+    </script>
+</body>
+
+</html>

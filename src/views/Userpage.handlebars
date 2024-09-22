@@ -1,0 +1,107 @@
+<div class="mt-4">
+  {{#each userData}}
+  <div class="Userdetail" id="user-{{this.USERNAME}}">
+    <div>
+      <div class="profileimage">
+        <ul class="info" style="padding-left: 20%; padding-top: 20px;">
+          <li style="display: inline; padding-right: 3rem;">
+            <img style="width: 10rem; border-radius: 50%;" src="https://e7.pngegg.com/pngimages/178/595/png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black.png">
+          </li>
+          <li style="display: inline; padding-right: 3rem;" id="name">{{this.NAME}}</li>
+          <li style="display: inline; padding-right: 3rem;">{{../love}} Loves</li>
+        </ul>
+      </div>
+      <div class="name"></div>
+    </div>
+    <ul id="user-info-{{this.USERNAME}}">
+      <li>Tên: <span id="name">{{this.NAME}}</span></li>
+      <li>Email: <span id="email">{{this.EMAIL}}</span></li>
+      <li>Số điện thoại: <span id="phone">{{this.SDT}}</span></li>
+      <li>Tài khoản: {{this.USERNAME}}</li>
+    </ul>
+    <button type="button" class="button-edit" onclick="editProfile('{{this.USERNAME}}', '{{this.NAME}}', '{{this.EMAIL}}', '{{this.SDT}}')">Chỉnh sửa thông tin</button>
+    <button type="button" class="button-edit" onclick="editPassword('{{this.USERNAME}}')">Đổi mật khẩu</button>
+    <div id="edit-fields-{{this.USERNAME}}" class="edit-fields" style="display: none;">
+    <div class="rowss" >
+        <input type="text" id="edit-name-{{this.USERNAME}}" placeholder="Tên" value="{{this.NAME}}">
+        <input type="text" id="edit-email-{{this.USERNAME}}" placeholder="Email" value="{{this.EMAIL}}">
+        <input type="text" id="edit-phone-{{this.USERNAME}}" placeholder="Số điện thoại" value="{{this.SDT}}">
+        <button type="button" class="button-update" onclick="updateProfile('{{this.USERNAME}}')">Cập nhật thông tin</button>
+        <button type="button" class="button-cancel" onclick="cancelEditProfile('{{this.USERNAME}}')">Hủy</button>
+    </div>
+      </div>
+    <div id="password-fields-{{this.USERNAME}}" style="display: none;">
+      <div class="rowss" >
+          <input type="password" id="current-password-{{this.USERNAME}}" placeholder="Mật khẩu hiện tại">
+          <input type="password" id="edit-password-{{this.USERNAME}}" placeholder="Mật khẩu mới">
+          <input type="password" id="confirm-password-{{this.USERNAME}}" placeholder="Xác nhận mật khẩu mới">
+          <button type="button" class="button-update" onclick="updatePassword('{{this.USERNAME}}')">Cập nhật mật khẩu</button>
+          <button type="button" class="button-cancel" onclick="cancelEditProfile('{{this.USERNAME}}')">Hủy</button>
+        </div>
+      </div>
+  </div>
+  {{/each}}
+    <div class="text-center"> 
+        <h2>Mẹo vặt yêu thích</h2>
+    </div>
+  <div class="row"> 
+    {{#each userFavouriteMeo}}
+    <div class="col-sm-6 col-lg-4">
+      <div class="card card-course-item" data-slug="{{this.SLUG}}" data-name="{{this.NAME}}" data-image="{{this.IMAGE}}">
+        <a href="/MeoVat/{{this.SLUG}}">
+          <img class="card-img-top" src="{{this.IMAGE}}" alt="{{this.NAME}}">
+        </a>
+        <div class="card-body">
+          <a href="/MeoVat/{{this.SLUG}}">
+            <h5 class="card-title">{{this.NAME}}</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div> 
+</div> 
+<div class="col-sm-12"> 
+      <div class="text-center"> 
+        <h2>Món ăn yêu thích</h2>
+      </div>
+      <div class="text-center"> 
+        <h3>Buổi sáng</h3>
+      </div>
+    </div>
+  <div class="row"> 
+    {{#each userFavouriteMonAnBuoiSang}}
+    <div class="col-sm-6 col-lg-4">
+      <div class="card card-course-item" data-slug="{{this.SLUG}}" data-name="{{this.NAME}}" data-image="{{this.IMAGE}}">
+        <a href="/BuaSang/{{this.SLUG}}">
+          <img class="card-img-top" src="{{this.IMAGE}}" alt="{{this.NAME}}">
+        </a>
+        <div class="card-body">
+          <a href="/BuaSang/{{this.SLUG}}">
+            <h5 class="card-title">{{this.NAME}}</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div> 
+  <div class="text-center"> 
+        <h3>Buổi trưa</h3>
+      </div>
+  <div class="row"> 
+    {{#each userFavouriteMonAnBuoiTrua}}
+    <div class="col-sm-6 col-lg-4">
+      <div class="card card-course-item" data-slug="{{this.SLUG}}" data-name="{{this.NAME}}" data-image="{{this.IMAGE}}">
+        <a href="/BuaTrua/{{this.SLUG}}">
+          <img class="card-img-top" src="{{this.IMAGE}}" alt="{{this.NAME}}">
+        </a>
+        <div class="card-body">
+          <a href="/BuaTrua/{{this.SLUG}}">
+            <h5 class="card-title">{{this.NAME}}</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

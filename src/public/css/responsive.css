@@ -1,0 +1,150 @@
+@media(max-width: 1200px) {
+	.owl-carousel .owl-nav > button.owl-prev{
+		left: 40%;
+		top: 108%;
+	}
+	.owl-carousel .owl-nav > button.owl-next{
+		left: 47%;
+    	top: 108%;
+	}
+}
+@media(max-width: 1024px) {
+	p {
+		font-size: 1rem;
+	}
+	.special-ingradient{
+		flex-wrap: wrap;
+	}
+	.pl-130{
+		padding-left: 0px;
+	}
+	.table-title h2{
+		    width: 62%;
+    font-size: 45px;
+	}
+	.slider-txt h2 span{
+		font-size: 3.8rem;
+    	line-height: 45px;
+	}
+	.site-menu-btns {
+	    margin-left: 3rem;
+	}
+	.theme-btn,
+	.theme-btn-secondary {
+		padding: 0.8rem 2rem;
+    	font-size: 1rem;
+    	font-weight: 500;
+
+	}
+	.sing-recipe-content {
+		padding-left: 0;
+	}
+	.recipe-carousel-item {
+		padding: 2.5rem 2rem;
+	}
+	.recipe-carousel .owl-item.active.center::after {
+		left: -40px;
+	}
+	.top-chefs {
+		padding: 0;
+	}
+	.chef-box-content img {
+	    max-width: 168px;
+	}
+	.chef-box-info .fs-26 {
+	    font-size: 1.5rem;
+	}
+	.blog-txt {
+	    padding: 2rem 1.5rem;
+	}
+	.blog-meta {
+	    padding-right: 1.5rem;
+	    padding-left: 1.5rem;
+	}
+	.folow-us > span {
+	    display: block;
+	    padding-bottom: 10px;
+	}
+}
+
+@media(max-width: 980px) {
+	.nav-menu {
+	display: block;
+}
+.book-table {
+    padding: 15% 15% !important;
+}
+.branch-item{
+		margin-top: 10px;
+	}
+	.branchs-boxes .row > div.col-lg-6:nth-child(3), .branchs-boxes .row > div.col-lg-6:nth-child(4){
+		margin-top: 0px;
+	}
+.slider-txt h2{
+	font-size: 50px;
+	line-height: 45px;
+}
+.recipe-cokng-info-2{
+	flex-wrap: wrap;
+	    padding: 30px;
+}
+.pb-110{
+		padding-bottom: 50px;
+	}
+.pt-110{
+		padding-top: 70px;
+	}
+.special-ingradient{
+	width: 100%;
+    display: block !important;
+}
+.recipe-cokng-info-2 li{
+	padding-bottom: 10px;
+}
+	.main-slider2 .kenburn-text h2 {
+    	font-size: 4.5rem;
+	}
+	.card-menu-inner{
+		    margin-top: 20px;
+	}
+	.sec-heading h2 {
+    	font-size: 35px;
+    	line-height: 30px;
+	}
+	.chef-personal-info{
+		padding: 1.875rem 1rem;
+	}
+	#comments{
+		padding: 2rem;
+	}
+	 .nav-menu {
+	    width: 0px;
+	    background-color: #fff;
+	    position: fixed;
+	    top: 0;
+	    right: 0;
+	    z-index: 9999;
+	    height: 100%;
+	    transition-duration: 500ms;
+	    padding: 0;
+	    box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
+	    overflow-y: auto;
+	    padding-top: 100px;
+	    transition: .3s all ease-in-out;
+	}
+}
+@media only screen and (max-width: 46.125em) {
+	.container-skills-2-block2{
+		display: none;
+	}
+	.container-food-2-block2{
+		display: none;
+
+	}
+	.container-food-2-block1{
+		width: 100%;
+	  }
+	.container-skills-2-block1{
+		width: 100%;
+	  }
+}

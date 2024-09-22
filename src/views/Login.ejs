@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/Login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon-16x16.png">
+</head>
+
+<body>
+    <div class="wrapper">
+        <form id="loginForm">
+            <h1>Login</h1>
+            <div class="inputbox">
+                <input type="text" placeholder="Username" id="Username" name="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="inputbox">
+                <input type="password" placeholder="Password" id="Password" name="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+                <div id="login-error-message" style="color: yellow; display: none;">Tên người dùng hoặc mật khẩu không
+                    chính xác.</div>
+            </div>
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+                <a href="/ForgotPassword">Forgot password?</a>
+            </div>
+            <button class="btn" type="submit">Login</button>
+            <p class="or-text" style="color: white;">OR</p>
+        </form>
+        <div>
+            <button class="btn" onclick="signInWithGoogle()" style="background-color: aquamarine;"><p><img style="width: 12px; height: 12px; margin: 0px 0px;" src="./image/google.png" ></img> Login With Google 
+            </button>
+        </div>
+        <div class="register-link">
+            <p>Don't have an account? <a href="/Register">Register now</a></p>
+        </div>
+        
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function signInWithGoogle() {
+            window.location.href = '/login/federated/google';
+        }
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Ngăn chặn submit mặc định của form
+            const password = document.getElementById('Password').value;
+            const username = document.getElementById('Username').value;
+            try {
+                // Gửi yêu cầu đăng nhập tới API /v1/Login
+                const LoginResponse = await axios.post('/v1/Login', { Username: username, Password: password });
+                // Kiểm tra mã trạng thái của phản hồi từ API
+                if (LoginResponse.status === 200) {
+                    window.location.href = '/';
+                } else {
+                    // Xử lý trường hợp đăng nhập không thành công
+                    // Hiển thị thông báo lỗi cho người dùng
+                    document.getElementById('login-error-message').style.display = 'block';
+                }
+            } catch (error) {
+                // Xử lý lỗi nếu có
+                document.getElementById('login-error-message').style.display = 'block';
+                console.error('Đăng nhập không thành công: ' + error);
+            }
+        });
+    </script>
+</body>
+
+</html>

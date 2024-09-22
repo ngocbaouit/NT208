@@ -1,0 +1,108 @@
+{{#each user}}
+<body>
+    <div class="container-food">
+        <div class="container-food-2">
+            <div class="container-food-2-block1">
+                <div class="container-food-2-block1-1">
+                    <div class="container-food-2-block1-1-header">
+                    </div>
+                    <h1 style="margin-top: 0;">{{this.NAME}} </h1>
+                    <img class="image"
+                        src="{{this.IMAGE}}">
+                    <p>
+                       {{this.INTRODUCE}}
+                    </p>
+                    <h2>Hướng dẫn chi tiết </h2>
+                    <h3>Nguyên liệu</h3>
+                    <p>{{this.nguyenlieu}}</p>
+                    <img class="image" src="{{this.IMAGE1}}" alt="">
+
+                    <h3> Cách làm</h3>
+                    <p>{{this.cachlam}}</p>
+                    <img class="image" src="{{this.IMAGE2}}" alt="">
+                    <h3> Bảo quản</h3>
+                    <p>{{this.baoquan}}</p>
+                    <img class="image" src="{{this.IMAGE3}}" alt="">
+
+                </div>
+            </div>
+            
+
+            <div class="container-food-2-block2">
+                <div class="scrolling-block">
+                    <div>
+                        <h2>Gợi ý </h2>
+                    </div>
+                    <div class="container-food-2-block2-1">
+                        <a href="/BuaSang/yen-mach-sua-chua"><img class="image"
+                                src="https://cdn-img.thethao247.vn/storage/files/linhseo/2022/01/11/hoa-qua-dam-yen-mach-2-1-1641910509.jpg"
+                                alt="bánh bao" style="height: 130px;"></a>
+                    </div>
+                    <div class="container-food-2-block2-1">
+                        <a href="/BuaSang/yen-mach-sua-chua">
+                            <div>
+                                <h3>Yến mạch sữa chua healthy</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="container-food-2-block2-1">
+                        <a href="/Buatrua/banh-trung-thu"><img class="image"
+                                src="https://static.vinwonders.com/production/nguyen-lieu-lam-banh-trung-thu-1.jpg"
+                                alt="Các công cụ để vệ sinh ấm đun nước" style="height: 130px;"></a>
+                    </div>
+                    <div class="container-food-2-block2-1">
+                        <a href="/Buatrua/banh-trung-thu">
+                            <div>
+                                <h3>Bánh trung thu trứng muối, phá cỗ cùng cùng bé vui </h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="container-food-2-block2-1">
+                        <a href="/Buatrua/burnt-cheese-cake-mem-chay"><img class="image"
+                                src="http://localhost:3000/image/cakememchay.jpg "
+                                alt="chesecake" style="height: 130px;"></a>
+                    </div>
+                    <div class="container-food-2-block2-1">
+                        <a href="/BuaTrua/burnt-cheese-cake-mem-chay">
+                            <div>
+                                <h3>Burnt chesecake mềm chảy</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="container-food-2-block2-1">
+                        <a href="/BuaSang/Bun-ca"><img class="image" class="image"
+                                src="https://static.vinwonders.com/production/bun-ca-ha-noi-banner.jpg" alt="Recipes"
+                                style="height: 130px;"></a>
+                    </div>
+                    <div class="container-food-2-block2-1">
+                        <a href="/BuaSang/Bun-ca">
+                            <div>
+                                <h3>Bún cá Hà Nội</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="container-food-2-block2-1">
+                        <a href="/BuaTrua/chan-ga-sa-ot"><img class="image"
+                                src="https://cdn.mediamart.vn/images/news/chia-s-cach-lam-chan-ga-st-thai-chua-cay-ngon-bt-bi_6c5c7afe.jpg"
+                                alt="Lúa mì nâu (spelt)" style="height: 130px;"></a>
+                    </div>
+                    <div class="container-food-2-block2-1">
+                        <a href="/BuaTrua/chan-ga-sa-ot">
+                            <div>
+                                <h3>Chân gà sả ớt</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<div className="App" style="font-family: sans-serif;
+text-align: center;">
+    <h1>Góp Ý</h1>
+    <div>
+      <script src="https://sheetdb.io/s/f/bues6uem9ua09.js"></script>
+    </div>
+  </div>
+{{/each}}

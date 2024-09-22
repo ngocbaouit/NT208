@@ -1,0 +1,2 @@
+Dynamically Uploaded Images will be stored on this folder
+path : Foodimg2Ing\static\demo_imgs

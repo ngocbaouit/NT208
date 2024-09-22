@@ -1,0 +1,75 @@
+/*****************************
+	Font Color
+******************************/
+.navbar-nav > li a:hover,
+.theme-btn:hover,
+.navbar-nav > li.active a,
+.food-cat-inner > i,
+.recipe-info > a:hover,
+.recipe-tabs .nav-pills li i,
+.tab-box-item h5:hover,
+.chef-box-content a,
+.chef-contct-info i,
+.blog-txt h3:hover,
+.quick-lnks-widget ul li:hover a,
+.contct-widget i,
+.footer-menu li a:hover,
+.abt-resturant ul li i,
+.quote-sec span,
+.signup-mem a:hover,
+.breadcrumb-item.active,
+.bg-nam,
+.pagination li.prev-page a:hover,
+.pagination li.next-page a:hover,
+.bst-recipe-widget div h5:hover,
+.cat-widget li:hover a,
+.cat-widget li:hover span,
+.useful-links li:hover a,
+.blog-list-txt h3:hover,
+.contact-icon-box i,
+.contact-bar-info i,
+.meal-inst li i,
+.review-title h4 span,
+.article-detail-meta span i,
+.article-cats a:hover,
+.blog-txt a,
+.theme-color,
+.table thead th,
+.main-call .social-icons li a,
+.gradient-list h3,
+.Ingredient-list li::marker{
+	color: #4fd675;
+}
+
+/*****************************
+	Background Color
+******************************/
+.bg-theme,
+.cart-btn span,
+.cart-btn:hover,
+.food-cat-box::before,
+.sing-smal-info li::before,
+.recipe-carousel .owl-item.active.center:after,
+a.popup-vid,
+.recipe-tabs .nav-pills li a.active,
+.theme-btn-secondary,
+.chef-box-content a,
+.chef-social-profile li a:hover,
+.folow-us a:hover,
+.quick-lnks-widget ul li:hover a::before,
+.card-bg .card-menu-inner,
+.bcom-membr button.theme-btn,
+.branch-flip-meta::before,
+.owl-carousel .owl-nav > button.owl-prev:hover,
+.owl-carousel .owl-nav > button.owl-next:hover,
+.pagination li a:hover,
+.signup-options .social-icons li:hover a,
+.article-cats::before,
+.comment-reply-link:hover {
+	background-color: #4fd675;
+}
+
+.contact-social li a:hover,
+.chef-social li:hover a {
+	background-color: #4fd675 !important;
+}

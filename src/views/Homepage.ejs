@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homepage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/color.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/search.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/image/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon-16x16.png">
+    <link rel="manifest" href="/image/site.webmanifest">
+    <link rel="stylesheet" href="/css/Homepage.css">
+
+    <style>
+        #results {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="style1">
+        <div class="search">
+                <form action="" class ="search-box">
+                    <input class="search-input" type="text" placeholder="Tìm công thức..." id="search">
+                    <i class='bx bx-search-alt-2'></i>
+                </form>
+            </div>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+            <div class="logo">
+                <a class="navbar-brand" href="javascript:void(0)">
+                    <img src="/image/logo1.png" alt="">
+                </a>
+            </div>
+            <div class="navbar-toggler active">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-menu active">
+                <!-- navbar-close -->
+                <div class="navbar-close">
+                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                </div>
+                <nav class="main-menu">
+                        <li><a href="/">Trang chủ</a></li>
+                        <li class="home-drop" onclick="submenu(0)">
+                            <a href="javascript:void(0)" class="home-click">
+                                Công thức
+                                <svg fill="#000" height="15" viewBox="0 0 330 330" style="enable-background:new 0 0 330 330;" xml:space="preserve">
+                                    <path id="two" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"></path>
+                                </svg>
+                            </a>
+                            <ul class="home-page-2">
+                                <li><a href="/BuaSang">Món Ăn Sáng</a></li>
+                                <li><a href="/BuaTrua">Món Ăn Trưa</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/MeoVat">Mẹo vặt</a></li>
+                        <li><a href="#footer">About Us</a></li>
+                            <% if (username) { %>
+                            <!-- Nếu đã đăng nhập, hiển thị username -->
+                            <li class="home-drop" onclick="submenu(1)">
+                                <a href="javascript:void(0)" class="home-click">
+                                    <%= username %>
+                                    <svg fill="#000" height="15" viewBox="0 0 330 330" style="enable-background:new 0 0 330 330;" xml:space="preserve">
+                                        <path id="two" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"></path>
+                                    </svg>
+                                </a>
+                                <ul class="home-page-2">
+                                    <li><a href="/Profile">Profile</a></li>
+                                    <li><a href="/Logout">Logout</a></li>
+                                </ul>
+                            </li>
+                            <% } else { %>
+                            <!-- Nếu chưa đăng nhập, hiển thị nút login -->
+                            <div class="site-menu-btns">
+                                <a class="theme-btn-secondary" href="/Login" title="">Login</a>
+                            </div>
+                            <% } %>
+                </nav>
+                
+            </div>
+            <div class="site-menu-wrapper ml-auto collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li><a href="/">Trang chủ</a></li>
+                    <li class="nav-item dropdown position-relative">
+                        <a class="nav-link" href="javascript:void(0)" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Công thức
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="/BuaSang">Món Ăn Sáng</a></li>
+                            <li><a class="dropdown-item" href="/BuaTrua">Món Ăn Trưa</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="/MeoVat" title="">Mẹo vặt</a></li>
+                    <li><a href="/BuaSang/create" title="">Đóng góp</a></li>
+                    <li><a href="#footer" title="">About Us</a></li>
+                </ul>
+                    <% if (username) { %>
+                    <div class="site-menu-btns d-flex" style="margin: 0px 0px;">
+                        <!-- Nếu đã đăng nhập, hiển thị username -->
+                        <div class="site-menu-wrapper ml-auto collapse navbar-collapse">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item dropdown position-relative">
+                                    <a class="nav-link" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <%= username %>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a class="dropdown-item" href="/Profile"> Profile</a></li>
+                                        <li><a class="dropdown-item" href="/Logout">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <% } else { %>
+                    <div class="site-menu-btns d-flex">
+                        <!-- Nếu chưa đăng nhập, hiển thị nút login -->
+                        <div><a class="theme-btn-secondary" href="/Login" title="">Login</a></div>
+                    </div>
+                    <% } %>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div id="wr">
+        <div class="vd">
+            <video autoplay muted loop id="myVideo">
+                <source src="/image/vdfoodfin.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="card-container">
+            <a href="/BuaSang/banh-hoi" class="btn">
+            <div class="card">
+                <img src="https://cdn.tgdd.vn/2021/01/CookRecipe/Avatar/banhhoichaolong.jpg">
+                <div class="card-content">
+                    <h3>Bánh hỏi cháo lòng</h3>
+                    <p>
+                        Bánh hỏi cháo lòng Quy Nhơn là món ăn thơm ngon được kết hợp từ bánh hỏi, lòng heo và ăn kèm
+                        với bát cháo nóng hổi.
+                    </p>
+                </div>
+            </div>
+            </a>
+            <a href="/BuaSang/kimbap-hoa-dau-biec" class="btn">
+            <div class="card1">
+                <img style="height: 300px ; width: 100%;"
+                    src="https://image.cooky.vn/recipe/g6/51958/s640/cooky-recipe-637139307702525491.jpg">
+                <div class="card-content">
+                    <h3>Kimbap Hoa Đậu Biếc </h3>
+                    <p>
+                        Kimbap vốn là món ăn đặc sắc của Hàn Quốc, đây là sự kết hợp hài hòa giữa cơm và các nguyên
+                        liệu như rong biển, rau củ, thịt, trứng...
+                    </p>
+                </div>
+            </div>
+            </a>
+            <a href="/BuaTrua/thit-ga-nuong-sot-tuong-ot-han-quoc" class="btn">
+            <div class="card">
+                <img src="https://image.cooky.vn/recipe/g1/9402/s640/cooky-recipe-cover-r9402.jpg">
+                <div class="card-content">
+                    <h3>Thịt gà nướng sốt tương ớt Hàn Quốc</h3>
+                    <p>
+                        Thịt gà nướng sốt tương ớt Hàn Quốc là món ăn tưởng khó, cầu kỳ nhưng thật ra rất đơn giản
+                        và dễ làm.
+                    </p>
+                </div>
+            </div>
+            </a>
+            <a href="/BuaTrua/canh-kim-chi" class="btn">
+            <div class="card">
+                <img
+                    src="https://assets.bonappetit.com/photos/5c5b6d2dd7da442cb562476c/16:9/w_640,c_limit/BA030119korean01.jpg">
+                <div class="card-content">
+                    <h3>Canh kim chi Hàn Quốc</h3>
+                    <p>
+                        Canh kim chi Hàn Quốc (hay còn gọi là Kimchi Jjigae) là một món ăn truyền thống phổ biến
+                        trong ẩm thực Hàn Quốc, được yêu thích bởi hương vị đậm đà, cay nồng và chua thanh đặc
+                        trưng.
+                    </p>
+                </div>
+            </div>
+            </a>
+            <a href="/BuaTrua/bun-rieu-cua-nam-bo" class="btn">
+            <div class="card1">
+                <img style="height: 300px ; width: 100%;"
+                    src="https://i1-giadinh.vnecdn.net/2023/10/05/Thanh-pham-3-3-1690-1696489497.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=RQZQKab-Dm9HK2Ny2avLBA">
+                <div class="card-content">
+                    <h3>Bún riêu cua Nam Bộ</h3>
+                    <p>
+                        Bún riêu Nam Bộ hấp dẫn với topping đa dạng như chả cua, huyết lợn, móng giò, chả lụa, tàu
+                        hủ chiên.
+                    </p>
+                </div>
+            </div>
+            </a>
+            <a href="/BuaTrua/ba-chi-rim-tom-kho" class="btn">
+            <div class="card">
+                <img src="https://image.cooky.vn/recipe/g4/35480/s640/cooky-recipe-cover-r35480.JPG">
+                <div class="card-content">
+                    <h3>Ba Chỉ Rim Tôm Khô</h3>
+                    <p>
+                        Thịt ba chỉ rim tôm khô là món ngon từ thịt ba chỉ và tôm khô, đặc trưng hương vị của món
+                        Việt.
+                    </p>
+                </div>
+            </div>
+            </a>
+        </div>
+
+
+        <h2 style="text-align: center" > RECIPE GENERATOR & CALORIE CALCULATOR</h2>
+        <div class="buttons-container ">
+        <a  class="rocket-button bton1" href="http://localhost:5000" target="_blank">
+            <div class="default">Recipe generator</div>
+            <div class="success">
+                <svg>
+                    <use xlink:href="#check">
+                </svg>
+                <div>Site live</div>
+            </div>
+            <div class="animation">
+                <div class="rocket">
+                    <svg>
+                        <use xlink:href="#rocket">
+                    </svg>
+                </div>
+                <div class="smoke">
+                    <i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+            </div>
+        </a>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 11" id="check">
+                <polyline stroke="currentColor" points="1 5.5 5 9.5 12 1.5"></polyline>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 36" id="rocket">
+                <path d="M12,0 C18.6666667,8.70175439 19.7777778,19.0350877 15.3333333,31 L8.66666667,31 C4.22222222,19.0350877 5.33333333,8.70175439 12,0 Z" fill="var(--rocket)"></path>
+                <path d="M12,0 C5.33333333,8.70175439 4.22222222,19.0350877 8.66666667,31 C6.72222222,17.9473684 7.83333333,7.61403509 12,0 Z" fill="var(--rocket-shadow-left)"></path>
+                <path d="M12,0 C18.6666667,8.70175439 19.7777778,19.0350877 15.3333333,31 C17.2777778,17.9473684 16.1666667,7.61403509 12,0 Z" fill="var(--rocket-shadow-right)"></path>
+                <path d="M22.2399372,27.25 C21.2403105,25.558628 19.4303122,23.808628 16.21,22 L15,31 L17.6512944,31 C18.2564684,31 18.8216022,31.042427 19.1572924,31.5292747 L21.7379379,35.271956 C22.0515593,35.7267976 22.5795404,36 23.1449294,36 C23.5649145,36 23.9142153,35.7073938 23.9866527,35.3215275 L24,35.146217 L23.9987214,35.1196135 C23.7534506,31.4421183 23.1671892,28.8189138 22.2399372,27.25 Z" fill="var(--rocket-wing-right)"></path>
+                <path d="M1.76006278,27.25 C2.75968951,25.558628 4.56968777,23.808628 7.79,22 L9,31 L6.34870559,31 C5.74353157,31 5.17839777,31.042427 4.84270762,31.5292747 L2.2620621,35.271956 C1.94844071,35.7267976 1.42045963,36 0.855070627,36 C0.435085457,36 0.0857846604,35.7073938 0.0133472633,35.3215275 L0,35.146217 L0.00127855763,35.1196135 C0.24654935,31.4421183 0.832810758,28.8189138 1.76006278,27.25 Z" fill="var(--rocket-wing-left)"></path>
+                <circle fill="var(--rocket-window-shadow)" cx="12" cy="12" r="3"></circle>
+                <circle fill="var(--rocket-window)" cx="12" cy="12" r="2.5"></circle>
+                <path d="M15.6021597,5.99977504 L8.39784027,5.9997750 4 C8.54788101,5.6643422 8.70496315,5.3309773 8.86908669,4.99968036 L15.1309133,4.99968036 C15.2950369,5.3309773 15.452119,5.6643422 15.6021597,5.99977504 Z" fill-opacity="0.3" fill="var(--rocket-line)"></path>
+            </symbol>
+        </svg>
+                
+        <!-- dribbble -->
+        <a class="dribbble" href="https://dribbble.com/shots/8224762--Button" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
+
+        <a class="rocket-button bton2" href="http://localhost:5002" target="_blank">
+            <div class="default">Calorie Calculator</div>
+            <div class="success">
+                <svg>
+                    <use xlink:href="#check">
+                </svg>
+                <div>Site live</div>
+            </div>
+            <div class="animation">
+                <div class="rocket">
+                    <svg>
+                        <use xlink:href="#rocket">
+                    </svg>
+                </div>
+                <div class="smoke">
+                    <i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+            </div>
+        </a>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 11" id="check">
+                <polyline stroke="currentColor" points="1 5.5 5 9.5 12 1.5"></polyline>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 36" id="rocket">
+                <path d="M12,0 C18.6666667,8.70175439 19.7777778,19.0350877 15.3333333,31 L8.66666667,31 C4.22222222,19.0350877 5.33333333,8.70175439 12,0 Z" fill="var(--rocket)"></path>
+                <path d="M12,0 C5.33333333,8.70175439 4.22222222,19.0350877 8.66666667,31 C6.72222222,17.9473684 7.83333333,7.61403509 12,0 Z" fill="var(--rocket-shadow-left)"></path>
+                <path d="M12,0 C18.6666667,8.70175439 19.7777778,19.0350877 15.3333333,31 C17.2777778,17.9473684 16.1666667,7.61403509 12,0 Z" fill="var(--rocket-shadow-right)"></path>
+                <path d="M22.2399372,27.25 C21.2403105,25.558628 19.4303122,23.808628 16.21,22 L15,31 L17.6512944,31 C18.2564684,31 18.8216022,31.042427 19.1572924,31.5292747 L21.7379379,35.271956 C22.0515593,35.7267976 22.5795404,36 23.1449294,36 C23.5649145,36 23.9142153,35.7073938 23.9866527,35.3215275 L24,35.146217 L23.9987214,35.1196135 C23.7534506,31.4421183 23.1671892,28.8189138 22.2399372,27.25 Z" fill="var(--rocket-wing-right)"></path>
+                <path d="M1.76006278,27.25 C2.75968951,25.558628 4.56968777,23.808628 7.79,22 L9,31 L6.34870559,31 C5.74353157,31 5.17839777,31.042427 4.84270762,31.5292747 L2.2620621,35.271956 C1.94844071,35.7267976 1.42045963,36 0.855070627,36 C0.435085457,36 0.0857846604,35.7073938 0.0133472633,35.3215275 L0,35.146217 L0.00127855763,35.1196135 C0.24654935,31.4421183 0.832810758,28.8189138 1.76006278,27.25 Z" fill="var(--rocket-wing-left)"></path>
+                <circle fill="var(--rocket-window-shadow)" cx="12" cy="12" r="3"></circle>
+                <circle fill="var(--rocket-window)" cx="12" cy="12" r="2.5"></circle>
+                <path d="M15.6021597,5.99977504 L8.39784027,5.99977504 C8.54788101,5.6643422 8.70496315,5.3309773 8.86908669,4.99968036 L15.1309133,4.99968036 C15.2950369,5.3309773 15.452119,5.6643422 15.6021597,5.99977504 Z" fill-opacity="0.3" fill="var(--rocket-line)"></path>
+            </symbol>
+        </svg>
+                
+        <!-- dribbble -->
+        <a class="dribbble" href="https://dribbble.com/shots/8224762--Button" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
+
+    </div>
+
+
+        <div class="container-meovat">
+            <div class="container-meovat-title">
+                <h2>COOKING TIPS & TECHNIQUES</h2>
+                <p style="text-align: center;">Level up your kitchen skills</p>
+            </div>
+            <div class="container-meovat-list">
+                <div class="container-meovat-1">
+                    <div class="container-meovat-2">
+                        <a href="/MeoVat/6-Skills-lam-bep"><img class="image" src="/image/6skillslambep/bokho.png"
+                                alt="Bò kho"></a>
+                    </div>
+                    <div>
+                        <a href="/MeoVat/6-Skills-lam-bep">
+                            <div>
+                                <h3>6 skills để làm món ngon </h3>
+                                <p>Chỉ cần nắm vững những kỹ năng này, trình nấu nướng của bạn sẽ được nâng cấp, dù
+                                    thực tế
+                                    bạn không quá thích vào bếp hay nấu ăn giỏi.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="container-meovat-1">
+                    <div class="container-meovat-2">
+                        <a href="/MeoVat/10-bi-kip-chon-thuc-pham-tuoi"><img class="image"
+                                src="/image/10bikipchonthucphamtuoi/trungga.jpg" alt="Trừng gà"></a>
+                    </div>
+                    <div>
+                        <a href="/MeoVat/10-bi-kip-chon-thuc-pham-tuoi">
+                            <div>
+                                <h3>10 bí kíp chọn thực phẩm tươi ngon</h3>
+                                <p>Với 10 mẹo nhận biết dưới đây, bạn dễ dàng loại bỏ những loại thực phẩm không an
+                                    toàn.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="container-meovat-1">
+                    <div class="container-meovat-2">
+                        <a href="/MeoVat/Cach-lam-sang-am-dun-nuoc-dien"><img class="image"
+                                src="/image/lamsachamdunnuoc/1.jpg " alt="Các công cụ để vệ sinh ấm đun nước"></a>
+                    </div>
+                    <div>
+                        <a href="/MeoVat/Cach-lam-sang-am-dun-nuoc-dien">
+                            <div>
+                                <h3>Cách làm sạch ấm đun nước điện</h3>
+                                <p>Tần suất làm sạch sẽ phụ thuộc vào tần suất sử dụng ấm đun nước của bạn. Bên
+                                    ngoài nên
+                                    được lau để loại bỏ các vết ố và bắn tung tóe ít nhất một lần một tuần. </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="container-meovat-1">
+                    <div class="container-meovat-2">
+                        <a href="/MeoVat/6-meo-don-gian"><img class="image"
+                                src="/image/9meocooking/meo3-6308-1506331373.jpg" alt="Chanh vàng"></a>
+                    </div>
+                    <div>
+                        <a href="/MeoVat/6-meo-don-gian">
+                            <div>
+                                <h3>6 mẹo nấu ăn hữu ích bạn có thể học lỏm từ đầu bếp nhà hàng</h3>
+                                <p>Cắt lát chanh càng mỏng, bạn sẽ được lát chanh càng chua. </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="container-meovat-1">
+                    <div class="container-meovat-2">
+                        <a href="/MeoVat/6-luu-y-cho-nguoi-moi-bat-dau"><img class="image"
+                                src="/image/6luuychonguoimoibatdau/MCIM02007674_FR10-KL-L1-6CookingTips-Prep.webp"
+                                alt="Recipes"></a>
+                    </div>
+                    <div>
+                        <a href="/MeoVat/6-luu-y-cho-nguoi-moi-bat-dau">
+                            <div>
+                                <h3>6 lưu ý nấu ăn đơn giản </h3>
+                                <p>Cho người đầu bếp mới bắt đầu, 6 sai lầm nấu ăn phổ biến mà mọi người thường mắc
+                                    phải và
+                                    cách mà bạn có thể tránh chúng. </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="container-meovat-1">
+                    <div class="container-meovat-2">
+                        <a href="/MeoVat/catanh"><img class="image"
+                                src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/5/13/909026/186107386_1937994386.jpg"
+                                alt="Khử mùi tanh cá"></a>
+                    </div>
+                    <div>
+                        <a href="/MeoVat/catanh">
+                            <div>
+                                <h3>Mẹo khử mùi tanh của cá</h3>
+                                <p>Mùi tanh là một trong những vấn đề cực kì phổ biến trong các món ăn có chứa cá, hãy cùng 14cooking giải quyết vấn đề này </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="container-meovat-1">
+                    <div class="container-meovat-2">
+                        <a href="/MeoVat/4-meo-bien-thit-dai-thanh-thit-mem"><img class="image"
+                                src="/image/4meobienthitdaithanhthitmem/1.jpg" alt="Thịt ngâm rượu sake"></a>
+                    </div>
+                    <div>
+                        <a href="/MeoVat/4-meo-bien-thit-dai-thanh-thit-mem">
+                            <div>
+                                <h3>Bốn mẹo biến thịt dai thành mềm mại</h3>
+                                <p>Những thủ thuật này được các đầu bếp có thâm niên đúc kết ra, có thể chữa thịt
+                                    dai trở
+                                    nên mềm mại, ngon tuyệt. </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="container-meovat-1">
+                    <div class="container-meovat-2">
+                        <a href="/MeoVat/chao-ech-singapore"><img class="image" src="/image/MeonaucomvachaoSGP/3.jpg"
+                                alt="Cháo"></a>
+                    </div>
+                    <div>
+                        <a href="/MeoVat/chao-ech-singapore">
+                            <div>
+                                <h3>Công thức nấu cơm và cháo ngon của đầu bếp Singapore</h3>
+                                <p>Cho gạo đã vo sạch vào tủ lạnh để qua đêm sẽ giúp nấu cơm hoặc cháo đỡ dính và
+                                    nhanh hơn.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="results"></div>
+
+    <script src="/js/search.js"></script>
+
+    <div class="block1">
+        <h2>HÔM NAY ĂN GÌ!</h2>
+        <div class="scroll-container">
+            <div class="image-items">
+                <div class="imageslick">
+                    <a href="/BuaSang/com-tam"><img
+                            src="https://cafebiz.cafebizcdn.vn/162123310254002176/2022/12/7/com-tam-suon-bi-cha-trung-anh-hoa-quynh-nguyen-1670317945936565526419-1670385940206-16703859407121546487016-1670395722685-16703957227611562343004.jpg"
+                            alt="abc"></a>
+                </div>
+            </div>
+            <div class="image-items">
+                <div class="imageslick">
+                    <a href="/BuaTrua/sup-miso"><img
+                            src="https://www3.nhk.or.jp/nhkworld/en/radio/cooking/update/meal_180126_l.jpg"
+                            alt="abc"></a>
+                </div>
+            </div>
+            <div class="image-items">
+                <div class="imageslick">
+                    <a href="/BuaSang/Pho-bo"><img src="/image/beef-noodle-soup-6729018_1920.jpg" alt="abc"></a>
+                </div>
+            </div>
+            <div class="image-items">
+                <div class="imageslick">
+                    <a href="/BuaTrua/muc-chien-nuoc-mam"><img
+                            src="https://i1-giadinh.vnecdn.net/2022/12/11/Thanh-pham-1-1-7715-1670752738.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=pQVueUpzy6IhN8szXuuFvQ"
+                            alt="abc"></a>
+                </div>
+            </div>
+            <div class="image-items">
+                <div class="imageslick">
+                    <a href="/BuaTrua/ca-ri-ga"><img
+                            src="https://assets.bonappetit.com/photos/57ae0a62f1c801a1038bcf17/16:9/w_640,c_limit/thai-chicken-curry.jpg"
+                            alt="abc"></a>
+                </div>
+            </div>
+            <div class="image-items">
+                <div class="imageslick">
+                    <a href="/BuaSang/com-tam"><img
+                            src="https://cafebiz.cafebizcdn.vn/162123310254002176/2022/12/7/com-tam-suon-bi-cha-trung-anh-hoa-quynh-nguyen-1670317945936565526419-1670385940206-16703859407121546487016-1670395722685-16703957227611562343004.jpg"
+                            alt="abc"></a>
+                </div>
+            </div>
+            <div class="image-items">
+                <div class="imageslick">
+                    <a href="/BuaTrua/sup-miso"><img
+                            src="https://www3.nhk.or.jp/nhkworld/en/radio/cooking/update/meal_180126_l.jpg"
+                            alt="abc"></a>
+                </div>
+            </div>
+            <div class="image-items">
+                <div class="imageslick">
+                    <a href="/BuaSang/Pho-bo"><img src="/image/beef-noodle-soup-6729018_1920.jpg" alt="abc"></a>
+                </div>
+            </div>
+            <div class="image-items">
+                <div class="imageslick">
+                    <a href="/BuaTrua/muc-chien-nuoc-mam"><img
+                            src="https://i1-giadinh.vnecdn.net/2022/12/11/Thanh-pham-1-1-7715-1670752738.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=pQVueUpzy6IhN8szXuuFvQ"
+                            alt="abc"></a>
+                </div>
+            </div>
+            <div class="image-items">
+                <div class="imageslick">
+                    <a href="/BuaTrua/ca-ri-ga"><img
+                            src="https://assets.bonappetit.com/photos/57ae0a62f1c801a1038bcf17/16:9/w_640,c_limit/thai-chicken-curry.jpg"
+                            alt="abc"></a>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="/js/app.js"></script>
+	<script src="/js/script.js"></script>
+    <div class="footer" id="footer">
+        <div class="address">
+            <h2>Contact</h2>
+            <p>Trường Đại học Công nghệ Thông tin</p>
+            <p>Địa chỉ: Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh</p>
+            <p>Số điện thoại: 028 3725 2002</p>
+        </div>
+        <div class="aboutus">
+
+            <h2>About us</h2>
+            <p1>Chào mừng đến với nhóm 14 Cooking!</p1>
+            <p>Nhóm 14 Cooking là một đội ngũ đam mê ẩm thực, nơi chúng tôi chia sẻ và khám phá nhiều hương vị mới
+                mẻ từ
+                khắp nơi trên thế giới. Chúng tôi tin rằng việc nấu ăn không chỉ là một cách để thư giãn và tạo ra
+                những
+                món ngon, mà còn là một hành trình văn hóa, kết nối con người và tạo ra những kỷ niệm đáng nhớ.</p>
+        </div>
+        <div class="social">
+            <h2>Follow us</h2><br>
+            <h3>Lớp NT208.O23</h3><br>
+            <i class='bx bxl-facebook-circle'></i>
+            <i class='bx bxl-github'></i>
+            <i class='bx bxl-gmail'></i>
+        </div>
+    </div>
+</body>
+</html>

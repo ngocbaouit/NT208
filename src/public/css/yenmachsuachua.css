@@ -1,0 +1,78 @@
+.container-food {
+  font-family: Arial;
+  /* background-color: #ffffcc; */
+  width: auto;
+  margin: 0 20px;
+}
+.container-food h1{
+  font-size: 200%;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+.container-food h2{
+  font-size: 150%;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+.container-food-2{
+  margin: 20px;
+  margin-left: 100px;
+  padding: 0px;
+  display: flex; /* Sử dụng flexbox */
+  flex-wrap: wrap; /* Cho phép các phần tử con tự động xuống dòng khi không đủ không gian */
+  justify-content: space-between;
+}
+.container-food-2-block1{
+  width: 60%;
+}
+.container-food-2-block2{
+  width: 38%;
+  margin-left: 2%;
+  position: relative;
+}
+.container-food-2-block1-1{
+  margin: 20px 20px;
+}
+.image {
+  width: 100%; 
+  height: 400px; 
+  background-size: cover; 
+  background-position: center; 
+  margin-bottom: 20px;
+}
+.container-food-2-block1-1-header{
+  height: auto;
+}
+.navigation {
+  display: flex;
+}
+.navigation  ul {
+  list-style: none;
+  display: flex;
+  align-items: center; /* căn dọc giữa */
+  color: black;
+}
+.navigation  ul li:not(:last-child) {
+  margin-right: 10px; /* Khoảng cách giữa các mục */
+}
+.navigation  ul li a:hover{
+  color: #41c466;
+}
+.scrolling-block {
+    top: 0;
+}
+.container-food-2-block2-1{
+    width: 40%; /* Điều chỉnh lại kích thước để có ít đường biên hơn */
+    margin: 10px 10px; /* Điều chỉnh lề để không cần lề bên trái và phải */
+    float: left;
+    height: 130px;
+  }
+  .container-food-2-block2-1 h3:hover {
+    color: #41c466;
+  }
+.tacgia{
+    text-align: right;
+}
+ul{
+  padding-left: 20px;
+}

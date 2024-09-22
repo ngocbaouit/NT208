@@ -1,0 +1,122 @@
+<div>
+	<header class="style1">
+		<div class="search">
+			<form action="" class="search-box">
+				<input type="text" placeholder="Tìm công thức ...." name="q" id="search">
+				<button type="submit"><img src="/image/search.png"></button>
+			</form>
+		</div>
+		<div class="container">
+			<nav class="navbar navbar-expand-lg">
+				<div class="logo">
+					<a class="navbar-brand" href="javascript:void(0)">
+						<img src="/image/logo1.png" alt="">
+					</a>
+				</div>
+				<div class="navbar-toggler active">
+					<span></span><span></span><span></span>
+				</div>
+				<div class="nav-menu active">
+					<!-- navbar-close -->
+					<div class="navbar-close">
+						<div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+					</div>
+					<!-- main menu -->
+					<nav class="main-menu">
+                        <li><a href="/">Trang chủ</a></li>
+                        <li class="home-drop" onclick="submenu(0)">
+                            <a href="javascript:void(0)" class="home-click">
+                                Công thức
+                                <svg fill="#000" height="15" viewBox="0 0 330 330" style="enable-background:new 0 0 330 330;" xml:space="preserve">
+                                    <path id="two" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"></path>
+                                </svg>
+                            </a>
+                            <ul class="home-page-2">
+                                <li><a href="/BuaSang">Món ăn sáng</a></li>
+                                <li><a href="/BuaTrua">Món ăn trưa</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/MeoVat">Mẹo vặt</a></li>
+                        <li><a href="#footer">About Us</a></li>
+                            {{#if username }}
+                            <!-- Nếu đã đăng nhập, hiển thị username -->
+                            <li class="home-drop" onclick="submenu(1)">
+                                <a href="javascript:void(0)" class="home-click">
+									{{ username }}!
+                                    <svg fill="#000" height="15" viewBox="0 0 330 330" style="enable-background:new 0 0 330 330;" xml:space="preserve">
+                                        <path id="two" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"></path>
+                                    </svg>
+                                </a>
+                                <ul class="home-page-2">
+                                    <li><a href="/Profile">Profile</a></li>
+                                    <li><a href="/Logout">Logout</a></li>
+                                </ul>
+                            </li>
+                            {{else}}
+                            <!-- Nếu chưa đăng nhập, hiển thị nút login -->
+                            <div class="site-menu-btns">
+                                <a class="theme-btn-secondary" href="/Login" title="">Login</a>
+                            </div>
+                            {{/if}}
+                </nav>
+                
+				</div>
+				<div class="site-menu-wrapper ml-auto collapse navbar-collapse">
+					<ul class="navbar-nav ml-auto">
+						<li><a href="/">Trang chủ</a></li>
+						<li class="nav-item dropdown position-relative">
+							<a class="nav-link" href="javascript:void(0)" role="button" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								Công thức
+							</a>
+							<ul class="dropdown-menu dropdown-menu-dark">
+								
+								<li><a class="dropdown-item" href="/BuaSang">Món ăn sáng</a></li>
+								<li><a class="dropdown-item" href="/BuaTrua">Món ăn trưa</a></li>
+							</ul>
+						</li>
+						<li><a href="/MeoVat" title="">Mẹo vặt</a></li>
+						<li><a href="/BuaSang/create" title="">Đóng góp</a></li>
+						<li><a href="#footer" title="">About Us</a></li>
+
+					</ul>
+					<div class="site-menu-btns d-flex"> 
+					{{#if username }}
+					<!-- Nếu đã đăng nhập, hiển thị username -->
+					<div class="site-menu-wrapper ml-auto collapse navbar-collapse">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item dropdown position-relative" style="margin: 0 0;">
+								<a class="nav-link" href="javascript:void(0)" role="button" data-bs-toggle="dropdown"
+									aria-expanded="false">
+									{{ username }}!
+								</a>
+								<ul class="dropdown-menu dropdown-menu-dark">
+									<li><a class="dropdown-item" href="/Profile"> Profile</a></li>
+									<li><a class="dropdown-item" href="/Logout">Logout</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					</div>
+					{{else}}
+					<!-- Nếu chưa đăng nhập, hiển thị nút login -->
+					<div><a class="theme-btn-secondary" href="/Login" title="">Login</a>
+					</div>
+					{{/if}}
+			</nav>
+		</div>
+	</header>
+    <section class="position-relative top-banner bg-gray">
+		<div class="top-banner-content text-center">
+			<div class="baner-name">
+				<h2 class="fs-50 text-uppercase">{{ currentTitle }}</h2>
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb justify-content-center p-0 mb-0">
+						<li class="breadcrumb-item text-gray fs-18 fm-arimo"><a href="/">Trang chủ</a></li>
+						<li class="breadcrumb-item active text-theme fs-18 fm-arimo"><a href="{{link}}">{{ currentTitle }}</a></li>
+					</ol>
+				</nav>
+			</div>
+		</div>
+	</section>
+</div>

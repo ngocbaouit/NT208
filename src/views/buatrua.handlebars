@@ -1,0 +1,37 @@
+<body>
+  <div class="mt-4">
+    <div class="row">
+      {{#each user}}
+      <div class="col-sm-6 col-lg-4" style="margin: 10px 0px;">
+        <div class="card card-course-item" data-slug="{{this.SLUG}}" data-name="{{this.NAME}}" data-image="{{this.IMAGE}}" data-introduce="{{this.INTRODUCE}}" data-id="{{this.ID}}" style="height: 600px;">
+          <a href="/BuaTrua/{{this.SLUG}}">
+            <img class="card-img-top" style="height: 300px;" src="{{this.IMAGE}}" alt="{{this.NAME}}">
+          </a>
+          <div class="card-body">
+            <a href="/BuaTrua/{{this.SLUG}}">
+              <h5 class="card-title">{{this.NAME}}</h5>
+            </a>
+            <p class="card-text">{{this.TITLE}}.</p>
+            <div class="blockheart" data-slug="{{this.SLUG}}" data-name="{{this.NAME}}" data-image="{{this.IMAGE}}" data-introduce="{{this.INTRODUCE}}" data-id="{{this.ID}}">
+              <div class="heart" id="{{this.ID}}"></div>
+              <div class="animation-heart" id=""></div>
+            </div>
+            </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  
+  <ul class="block-navigate">
+    <li class="item-navigate item-navigate--active">
+      <a href="/BuaTrua/navigate/1" class="item-navigate_link">1</a>
+    </li>
+    <li class="item-navigate">
+      <a href="/BuaTrua/navigate/2" class="item-navigate_link">2</a>
+    </li>
+  </ul>
+</body>
+{{#if loggedIn}}
+    <script src="/js/favourite-food-lunch.js"></script>
+    {{/if}}

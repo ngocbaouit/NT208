@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block home %}
+
+
+            <div id="info" class="col-md-8">
+                <div class="card m-3">
+                    <img src="{{ url_for('static',filename='images/cover.jpg')}}" class="card-img-top" alt="..." >
+                    <div class="card-body" >
+                      <h5 class="card-title text-center" id=infotitle >Recipe Generation from Food Image</h5>
+                      <br>
+                      <p class="card-text" id="infobody">Hãy upload ảnh lên<br>Chúng tôi sẽ dự đoán tên món ăn, nguyên liệu và công thức nấu ăn cho bạn</p>
+                      <p class="card-text"><small class="text-muted">Thời gian thực thi : ~40s</small></p>
+                    </div>
+                  </div>
+            </div>
+
+
+            <div id="loading" style="display:none;" class="col-md-8">
+                <div class="loader">
+                    <div class="inner one"></div>
+                    <div class="inner two"></div>
+                    <div class="inner three"></div>
+                    <h4>Đang tải </h4>
+                    <h5>Vui lòng chờ trong giây lát ...</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+
+{% endblock home %}

@@ -1,0 +1,114 @@
+.Userdetail h1, .Userdetail h2 {
+  text-align: center;
+}
+
+.Userdetail ul {
+  padding-left: 0;
+  font-size: 1.5rem;
+  list-style: none; /* Optional: To remove default list styles */
+}
+
+.Userdetail profileimage img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Favoritepost {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  background-color: #fffbf5;
+}
+
+.button-edit, .button-update, .button-cancel {
+  width: 100%;
+  max-width: 300px;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px auto; /* Center buttons */
+}
+
+.button-edit:hover, .button-update:hover {
+  background-color: #45a049;
+}
+
+.button-cancel:hover {
+  background-color: #da190b;
+}
+
+#edit-fields {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  max-width: 600px; /* Optional: set a max-width for the container */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#edit-fields input[type="password"], 
+#edit-fields input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 5px 0 20px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="password"], input[type="text"] {
+  color: #666666;
+  border-radius: 40px;
+  border: 2px solid #d1ddcd;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.rowss {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+}
+
+.rowss input[type="text"],
+.rowss input[type="password"],
+.rowss button {
+  width: 100%; 
+  max-width: 300px; /* Set a max-width for inputs and buttons */
+  box-sizing: border-box; 
+  margin-bottom: 10px; 
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .Userdetail ul {
+    padding-left: 35%;
+  }
+
+  .button-edit, .button-update, .button-cancel {
+    width: 30%;
+  }
+
+  .rowss {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .rowss input[type="text"],
+  .rowss input[type="password"],
+  .rowss button {
+    width: 30%;
+    margin-bottom: 0; 
+  }
+}
